@@ -6,7 +6,7 @@
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  02/02/24 10:15:59 PM IST
+ *        Created:  03/02/24 10:48:50 AM IST
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,6 +16,8 @@
  * =====================================================================================
  */
 
-
-#define max(a,b) ( a > b ? a : b )
-int sum(int a,int b);
+#ifndef __A__
+#define __A__
+#define max(a,b) (a > b? a : b)
+int sum(int a,int b)
+#endif
