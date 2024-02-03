@@ -6,7 +6,7 @@
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  02/02/24 10:43:11 PM IST
+ *        Created:  03/02/24 10:51:41 AM IST
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,9 +16,9 @@
  * =====================================================================================
  */
 
+#include "A.h"
 #include "B.h"
-#define square(x) ( x*x )
-
+#define square(x) (x*x)
 
 int foo(int b);
 int foo(int b){
@@ -27,5 +27,6 @@ int foo(int b){
 
 int main(){
     int a = square(15);
+
     return 0;
 }
