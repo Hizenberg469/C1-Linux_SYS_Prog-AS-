@@ -1,0 +1,56 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  bitmap.c
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  23/02/24 08:02:40 PM IST
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  YOUR NAME (), 
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+
+#include "bitmap.h"
+
+#ifndef CHAR_SIZE
+#define CHAR_SIZE 8
+#endif
+
+bool
+bitmap_is_full(bit_array_t *bitmap){
+    
+    unsigned int sz = bitmap->size;
+    unsigned int byte_block = sz/CHAR_SIZE;
+    unsigned int residual_block = sz%CHAR_SIZE;
+
+    char *ptr = NULL;
+    for(int block_num = 0 ; block_num < byte_block ; block_num ){
+
+        ptr = bitarr->array+block_num;
+
+        if( block_num == byte_block - 1 ){
+            if( (*ptr) != ~((1<<(CHAR_SIZE - residual_block))-1) ){
+                return false;
+            }
+            continue;
+        }
+
+        if( (*ptr) != (1<<8)-1 ){
+            return false;
+        }
+    }
+
+    return true;
+
+}
+
+bool
+bitmap_pattern_match( bit_array_t *bitmap, char *binary_string,int n_bits,int *i){
+    
+}

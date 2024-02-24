@@ -101,7 +101,7 @@ unset_bit(bit_array_t *bitarr, unsigned int index){
     UNSET_BIT((*ptr), (CHAR_SIZE - residual_bit));
 }
 
-char
+bool
 is_bit_set(bit_array_t *bitarr, unsigned int index){
 
     
@@ -122,7 +122,7 @@ is_bit_set(bit_array_t *bitarr, unsigned int index){
         bitarr->trail_bits >= residual_bit);
 #endif
     char *ptr = bitarr->array + byte_block;
-    return (char)(IS_BIT_SET((*ptr), (CHAR_SIZE - residual_bit)));
+    return (IS_BIT_SET((*ptr), (CHAR_SIZE - residual_bit)));
 }
 
 unsigned int

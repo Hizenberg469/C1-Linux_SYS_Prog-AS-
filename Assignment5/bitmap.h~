@@ -1,0 +1,41 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  bitmap.h
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  23/02/24 07:42:05 PM IST
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  YOUR NAME (), 
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+
+#ifndef __BITMAP_H_
+#define __BITMAP_H_
+
+#ifndef __BIT_ARRAY__
+#include "bitsop.h"
+#endif
+
+#ifndef __BITS__
+#include "bitarr.h"
+#endif
+
+#define ITERATE_BITMAP_BEGIN(bitmap_ptr ,bit_state) \
+    char *ptr = bitmap_ptr->
+
+#define ITERATE_BITMAP_END(bitmap_ptr ,bit_state)
+
+bool
+bitmap_is_full(bit_arrya_t *bitmap);
+
+bool
+bitmap_pattern_match(bit_array_t *bitmap,char *binary_string,int n_bits,int *i);
+
+#endif
