@@ -20,12 +20,16 @@
 #define __BITMAP_H_
 
 #ifndef __BIT_ARRAY__
-#include "bitsop.h"
+#include "bitarr.h"
 #endif
 
 #ifndef __BITS__
-#include "bitarr.h"
+#include "bitsop.h"
 #endif
+
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #define ITERATE_BITMAP_BEGIN(bitmap_ptr ,bit_state) \
 {                                                   \
@@ -47,7 +51,7 @@
 #define ITERATE_BITMAP_END(bitmap_ptr ,bit_state)   }}}
 
 bool
-bitmap_is_full(bit_arrya_t *bitmap);
+bitmap_is_full(bit_array_t *bitmap);
 
 bool
 bitmap_pattern_match(bit_array_t *bitmap,char *binary_string,int n_bits,int *i);

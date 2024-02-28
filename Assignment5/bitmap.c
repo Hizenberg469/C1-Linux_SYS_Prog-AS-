@@ -32,7 +32,7 @@ bitmap_is_full(bit_array_t *bitmap){
     char *ptr = NULL;
     for(int block_num = 0 ; block_num < byte_block ; block_num ){
 
-        ptr = bitarr->array+block_num;
+        ptr = bitmap->array+block_num;
 
         if( block_num == byte_block - 1 ){
             if( (*ptr) != ~((1<<(CHAR_SIZE - residual_block))-1) ){
@@ -77,11 +77,11 @@ bitmap_pattern_match( bit_array_t *bitmap, char *binary_string,int n_bits,int *i
 
     for(int idx = 0 ; idx < n_bits ; idx++ ){
         if( binary_string[idx] == '0' ){
-            mask |= (1<<(n-1-idx));
+            mask |= (1<<(n_bits-1-idx));
         }
         else if( binary_string[idx] == '1' ){
-            mask |= (1<<(n-1-idx));
-            template |= (1<<(n-1-idx));
+            mask |= (1<<(n_bits-1-idx));
+            template |= (1<<(n_bits-1-idx));
         }
     }
 
@@ -89,7 +89,7 @@ bitmap_pattern_match( bit_array_t *bitmap, char *binary_string,int n_bits,int *i
 
     for( int idx = 0 ; idx + n_bits < sz ; idx++ ) {
         if( mask&bitmap_num == template ){
-            i = idx;
+            *i = idx;
             return true;
         }
         mask <<= 1;
